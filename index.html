@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Immersive Presentation Agents</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Immersive Presentation Agent Studio</h1>
+        <p>Topic → Clarify → Orchestrate → Generate → Verify → Present</p>
+      </div>
+      <button id="resetBtn" class="secondary">Reset Session</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel chat-panel">
+        <h2>Teacher Conversation</h2>
+        <div id="chatLog" class="chat-log"></div>
+        <form id="chatForm" class="chat-form">
+          <textarea
+            id="chatInput"
+            placeholder="Enter topic or ask edits, e.g. 'Photosynthesis for grade 8, 12 minutes, medium depth'"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="panel stage-panel">
+        <h2>Presentation Canvas</h2>
+        <div id="stageMeta" class="stage-meta">No presentation generated yet.</div>
+        <div id="presentationStage" class="presentation-stage"></div>
+      </section>
+
+      <section class="panel agents-panel">
+        <h2>Agent Activity</h2>
+        <div id="agentTimeline" class="agent-timeline"></div>
+      </section>
+    </main>
+
+    <template id="chatItemTemplate">
+      <article class="chat-item">
+        <span class="role"></span>
+        <p class="content"></p>
+      </article>
+    </template>
+
+    <template id="agentItemTemplate">
+      <article class="agent-item">
+        <header>
+          <strong class="agent-name"></strong>
+          <span class="agent-status"></span>
+        </header>
+        <p class="agent-message"></p>
+        <small class="agent-time"></small>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
